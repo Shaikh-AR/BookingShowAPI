@@ -39,7 +39,7 @@ public class ScreenService {
 //			Add Screen and Seat
 			Screen screen = this.modelMapper.map(screenDto, Screen.class);
 			/*
-			 * Screen variable your are having no of classic,gold,platinum seat Screen is
+			 * Screen variable your having no of classic,gold,platinum seat Screen is
 			 * having seat object? not present and i want to add it Screen is having
 			 * theatre? no but we are having theatre object then i will set it (theatre)
 			 */

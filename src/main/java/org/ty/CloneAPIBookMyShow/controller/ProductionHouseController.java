@@ -24,19 +24,19 @@ public class ProductionHouseController {
 	private ProductionHouseService service;
 
 	@PostMapping
-	public ResponseEntity<ResponseStructure<ProductionHouse>> saveProductionHouse(@Valid @RequestParam long ownerId,@Valid
+	public ResponseEntity<ResponseStructure<ProductionHouse>> saveProductionHouse(@RequestParam long ownerId,@Valid
 			@RequestBody ProductionHouseDto houseDto) {
 		return service.saveProductionHouse(ownerId, houseDto);
 	}
 
 	@PutMapping
-	public ResponseEntity<ResponseStructure<ProductionHouse>> updateProductionHouse(@Valid @RequestParam long houseId,
+	public ResponseEntity<ResponseStructure<ProductionHouse>> updateProductionHouse(@RequestParam long houseId,
 			@Valid @RequestBody ProductionHouseDto houseDto) {
 		return service.updateProductionHouse(houseId, houseDto);
 	}
 
 	@GetMapping
-	public ResponseEntity<ResponseStructure<ProductionHouse>> getProductionHouseById(@Valid @RequestParam long houseId) {
+	public ResponseEntity<ResponseStructure<ProductionHouse>> getProductionHouseById(@RequestParam long houseId) {
 		return service.getProductionHouseById(houseId);
 	}
 	

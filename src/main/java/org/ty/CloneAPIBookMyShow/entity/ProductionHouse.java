@@ -39,7 +39,4 @@ public class ProductionHouse {
 
 	@OneToMany(fetch = FetchType.EAGER,mappedBy = "productionHouse")
 	private List<Movie> movies;
-
-	
-
 }

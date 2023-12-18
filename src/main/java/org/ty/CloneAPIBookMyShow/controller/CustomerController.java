@@ -43,5 +43,4 @@ public class CustomerController {
 	public ResponseEntity<ResponseStructure<CustomerDto>> deleteCustomer(@RequestParam long customerId){
 		return service.deleteCustomerById(customerId);
 	}
-	
 }

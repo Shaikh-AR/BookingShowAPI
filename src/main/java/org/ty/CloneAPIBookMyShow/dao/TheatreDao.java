@@ -48,6 +48,7 @@ public class TheatreDao {
 			theatre.setOwner(null);
 			theatre.setAddress(null);
 			List<MovieShow> list = optional.get().getMovieShows();
+			
 			for(MovieShow show:list) {
 				show.setTheatre(null);
 			}

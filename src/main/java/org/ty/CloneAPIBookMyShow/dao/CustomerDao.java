@@ -23,8 +23,9 @@ public class CustomerDao {
 			customer.setCustomerId(customerId);
 			repo.save(customer);
 			return customer;
+		} else {
+			return null;
 		}
-		return null;
 	}
 
 	public Customer deleteCustomerById(long customerId) {
@@ -32,15 +33,17 @@ public class CustomerDao {
 		if (optional.isPresent()) {
 			repo.delete(optional.get());
 			return optional.get();
+		} else {
+			return null;
 		}
-		return null;
 	}
 
 	public Customer getCustomerById(long customerId) {
 		Optional<Customer> optional = repo.findById(customerId);
 		if (optional.isPresent()) {
 			return optional.get();
+		} else {
+			return null;
 		}
-		return null;
 	}
 }

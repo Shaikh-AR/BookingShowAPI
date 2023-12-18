@@ -46,7 +46,7 @@ public class OwnerService {
 			return new ResponseEntity<ResponseStructure<OwnerDto>>(structure, HttpStatus.FOUND);
 
 		} else {
-			// raise ownerIdNotFound Exception
+			// raise ownerIdNotFoundException
 			throw new OwnerIdNotFoundException("Sorry Owner Data Not Found");
 		}
 	}

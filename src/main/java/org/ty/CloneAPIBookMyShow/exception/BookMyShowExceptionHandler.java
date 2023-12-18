@@ -20,7 +20,8 @@ import org.ty.CloneAPIBookMyShow.util.ResponseStructure;
 
 @RestControllerAdvice
 public class BookMyShowExceptionHandler extends ResponseEntityExceptionHandler {
-
+	
+//	for all Validation Exception
 	@Override
 	protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
 			HttpHeaders headers, HttpStatus status, WebRequest request) {

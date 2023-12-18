@@ -134,10 +134,10 @@ public class MovieShowService {
 
 	public ResponseEntity<ResponseStructure<MovieShow>> getMovieShowById(long showId) {
 		MovieShow dbMovieShow = showDao.getShowById(showId);
-		Movie dbMovie = movieDao.getMovieById(dbMovieShow.getMovieId());
-		if (dbMovie != null) {
-			dbMovieShow.setGenre(dbMovie.getGenre1());
-		}
+//		Movie dbMovie = movieDao.getMovieById(dbMovieShow.getMovieId());
+//		if (dbMovie != null) {
+//			dbMovieShow.setGenre(dbMovie.getGenre1());
+//		}
 		if (dbMovieShow != null) {
 			ResponseStructure<MovieShow> structure = new ResponseStructure<MovieShow>();
 			structure.setMessage("Fetch Show Successfully");

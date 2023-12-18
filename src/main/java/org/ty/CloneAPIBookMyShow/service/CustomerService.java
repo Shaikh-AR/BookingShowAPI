@@ -32,12 +32,11 @@ public class CustomerService {
 
 	public ResponseEntity<ResponseStructure<CustomerDto>> updateCustomer(long customerId, Customer customer) {
 		Customer dbCustomer = customerDao.updateCustomer(customerId, customer);
-		CustomerDto customerDto = this.modelMapper.map(dbCustomer, CustomerDto.class);
 		if (dbCustomer != null) {
 			ResponseStructure<CustomerDto> structure = new ResponseStructure<CustomerDto>();
 			structure.setMessage("Customer Updated Successfully");
 			structure.setStatus(HttpStatus.OK.value());
-			structure.setData(customerDto);
+			structure.setData(this.modelMapper.map(dbCustomer, CustomerDto.class));
 			return new ResponseEntity<ResponseStructure<CustomerDto>>(structure, HttpStatus.OK);
 		} else {
 			throw new CustomerIdNotFoundException("Sorry failed to Update the Customer");
@@ -46,12 +45,11 @@ public class CustomerService {
 
 	public ResponseEntity<ResponseStructure<CustomerDto>> getCustomerById(long customerId) {
 		Customer dbCustomer = customerDao.getCustomerById(customerId);
-		CustomerDto customerDto = this.modelMapper.map(dbCustomer, CustomerDto.class);
 		if (dbCustomer != null) {
 			ResponseStructure<CustomerDto> structure = new ResponseStructure<CustomerDto>();
 			structure.setMessage("Customer Found Successfully");
 			structure.setStatus(HttpStatus.FOUND.value());
-			structure.setData(customerDto);
+			structure.setData(this.modelMapper.map(dbCustomer, CustomerDto.class));
 			return new ResponseEntity<ResponseStructure<CustomerDto>>(structure, HttpStatus.FOUND);
 		} else {
 			throw new CustomerIdNotFoundException("Sorry failed to fetch the Customer");
@@ -60,12 +58,11 @@ public class CustomerService {
 
 	public ResponseEntity<ResponseStructure<CustomerDto>> deleteCustomerById(long customerId) {
 		Customer dbCustomer = customerDao.deleteCustomerById(customerId);
-		Customer customerDto = this.modelMapper.map(dbCustomer, Customer.class);
 		if (dbCustomer != null) {
 			ResponseStructure<CustomerDto> structure = new ResponseStructure<CustomerDto>();
 			structure.setMessage("Customer Delete Successfully");
 			structure.setStatus(HttpStatus.FOUND.value());
-			structure.setData(customerDto);
+			structure.setData(this.modelMapper.map(dbCustomer, Customer.class));
 			return new ResponseEntity<ResponseStructure<CustomerDto>>(structure, HttpStatus.FOUND);
 		} else {
 			throw new CustomerIdNotFoundException("Sorry failed to Delete the Customer");

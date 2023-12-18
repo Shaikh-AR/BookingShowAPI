@@ -28,6 +28,7 @@ public class Screen {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long screenId;
 	private String screenName;
+	
 //	screen type
 	private ScreenType screenType;
 //  screen availability
@@ -37,6 +38,7 @@ public class Screen {
 	
 	@OneToMany(mappedBy = "screen",cascade = CascadeType.ALL)
 	private List<Seat> seats;
+	
 	private int noOfClassicSeat;
 	private int noOfPlatinumSeat;
 	private int noOfGoldSeat;

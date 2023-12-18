@@ -31,7 +31,7 @@ public class Owner {
 	@Min(6000000000l)
 	@Max(9999999999l)
 	private long ownerPhoneNumber;
-	@Email(regexp = "^(.+)@(\\S+)$",message = "Email is Not Valid please Wright in alphabet@gmail.com")
+	@Email(regexp = "^(.+)@(\\S+)$",message = "Email is Not Valid please Wright in this format alphabet@gmail.com")
 	private String ownerEmail;
 	@Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\\S+$).{8,20}$",message = "Password is not Valid Please Used Combination of small and Capital Character and number with Special Character")
 	private String ownerPassword;
